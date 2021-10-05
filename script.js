@@ -4,11 +4,43 @@ let colorSelected;
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row")
+    //declare tbl variable and set it equal to grid element
+    var tbl = document.getElementById("grid");
+    //handle case where no columns have been added
+    if(numCols === 0){
+        var row = tbl.insertRow();
+        var cell = row.insertCell();
+        numRows++;
+    }
+    //handle case where a column has been added
+    if(numCols>0){
+        var row = tbl.insertRow();
+        for(let i = 0; i <= numCols; i++){
+            row.insertCell();
+        }
+        numRows++;
+        
+    }
+
 }
 //Add a column
 function addC() {
-    alert("Clicked Add Col")
+    var tbl = document.getElementById("grid");
+    const rows = tbl.querySelectorAll("tr");
+
+    if(numRows === 0){
+        var row = tbl.insertRow();
+        var cell = row.insertCell();
+        numRows++;
+    }
+    else{
+        for(let i = 0; i < rows.length; i++){
+            rows[i].insertCell();
+        }
+        numCols++;
+
+    }
+
 }
 
 //Remove a row
