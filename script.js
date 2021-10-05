@@ -25,19 +25,24 @@ function addR() {
 }
 //Add a column
 function addC() {
+    //declare tbl variable and set it equal to grid element
     var tbl = document.getElementById("grid");
+    //use querySelectorAll to get all tr elements in grid
     const rows = tbl.querySelectorAll("tr");
 
+    //handle case where numRows === 0
     if(numRows === 0){
         var row = tbl.insertRow();
         var cell = row.insertCell();
         numRows++;
     }
+
+    //handle all other cases
     else{
         for(let i = 0; i < rows.length; i++){
             rows[i].insertCell();
         }
-        numCols++;
+        numCols++; 
 
     }
 
