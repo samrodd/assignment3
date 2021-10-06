@@ -52,10 +52,13 @@ function addC() {
 function removeR() {
     //declare tbl variable and set it equal to grid element
     var tbl = document.getElementById("grid");
+
     //delete last row
     tbl.deleteRow(numRows-1);
     //decrement numRows
-    numRows--;
+    if(numRows > 0){
+        numRows--;
+    }
     //set numCols to 0 when last row is removed
     if(numRows === 0){
         numCols = 0;
@@ -65,7 +68,12 @@ function removeR() {
 function removeC() {
     //declare tbl variable and set it equal to grid element
     var tbl = document.getElementById("grid");
+    const rows = tbl.querySelectorAll("tr");
     //tbl
+    for(let i = 0; i < numRows; i++){
+        rows[numRows-1].deleteCell[i];
+    }
+    numCols--;
 
 }
 //sets global var for selected color
