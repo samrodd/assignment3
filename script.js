@@ -50,7 +50,10 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    alert("Clicked Remove Row")
+    //declare tbl variable and set it equal to grid element
+    var tbl = document.getElementById("grid");
+    tbl.deleteRow(numRows-1);
+    numRows--;
 }
 //Remove a column
 function removeC() {
