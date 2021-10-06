@@ -69,30 +69,27 @@ function removeC() {
     var tbl = document.getElementById("grid");
     //use querySelectorAll to get all tr elements in grid
     const rows = tbl.querySelectorAll("tr");
+    //set numRows to zero when numCols equals 0
     if(numCols === 0){
         numRows = 0;
-        console.log(numRows);
-        console.log(numCols);
         return;
 
     }
-
+//handle case where numCols > 0
     else{
+        //iterate through rows and delete last cell
         for(let i = 0; i < numRows; i++){
             var r = tbl.rows[i];
             r.deleteCell(0);
         }
+        //decrement numCols
         numCols--;
+        //if final column is deleted call clearAll
         if(numCols === 0){
             clearAll();
             return;
         }
     }
-    console.log(numRows);
-    console.log(numCols);
-
-  //  console.log(numRows);
-
 
 }
 //sets global var for selected color
@@ -108,10 +105,11 @@ function fill(){
 function clearAll(){
     //declare tbl variable and set it equal to grid element
     var tbl = document.getElementById("grid");
-    
+    //iterate through table deleting all child nodes
     while(tbl.hasChildNodes()){
         tbl.removeChild(tbl.firstChild);
     }
+    //set numRows and numCols to 0
     numRows=0;
     numCols=0;
 }
