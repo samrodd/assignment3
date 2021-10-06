@@ -52,12 +52,15 @@ function addC() {
 function removeR() {
     //declare tbl variable and set it equal to grid element
     var tbl = document.getElementById("grid");
+    //delete last row
     tbl.deleteRow(numRows-1);
+    //decrement numRows
     numRows--;
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+
+
 }
 //sets global var for selected color
 function selected(){
