@@ -56,10 +56,16 @@ function removeR() {
     tbl.deleteRow(numRows-1);
     //decrement numRows
     numRows--;
+    //set numCols to 0 when last row is removed
+    if(numRows === 0){
+        numCols = 0;
+    }
 }
 //Remove a column
 function removeC() {
-
+    //declare tbl variable and set it equal to grid element
+    var tbl = document.getElementById("grid");
+    //tbl
 
 }
 //sets global var for selected color
