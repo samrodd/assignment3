@@ -35,6 +35,7 @@ function addC() {
          var row = tbl.insertRow();
          var cell = row.insertCell();
          numRows++;
+         numCols++;
      }
  
      //handle all other cases
@@ -99,7 +100,13 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    //get all td elements and store in variable elems
+    var elems = document.getElementById("grid").getElementsByTagName("td");
+    //iterate through all table cells and change background-color to colorSelected
+    for(let i = 0; i < elems.length; i++){
+        elems[i].style.backgroundColor = colorSelected;
+    }
+
 }
 
 function clearAll(){
