@@ -10,6 +10,7 @@ function addR() {
     if(numCols === 0){
         var row = tbl.insertRow();
         var cell = row.insertCell();
+        cell.setAttribute('onClick', 'changeCellColor(event)');
         numRows++;
         numCols++;
     }
@@ -17,7 +18,9 @@ function addR() {
     else{
         var row = tbl.insertRow();
         for(let i = 0; i < numCols; i++){
-            row.insertCell();
+            cell = row.insertCell();
+            cell.setAttribute('onClick', 'changeCellColor(event)');
+
         }
         numRows++;    
     }
@@ -34,7 +37,7 @@ function addC() {
      if(numRows === 0){
          var row = tbl.insertRow();
          var cell = row.insertCell();
-        cell.setAttribute('onClick', 'changeCellColor(event)');
+         cell.setAttribute('onClick', 'changeCellColor(event)');
          numRows++;
          numCols++;
      }
@@ -43,9 +46,7 @@ function addC() {
      else{
          for(let i = 0; i < rows.length; i++){
             var cell = rows[i].insertCell();
-            cell.setAttribute('onClick', 'changeCellColor(event)');
-
-             
+            cell.setAttribute('onClick', 'changeCellColor(event)');             
          }
          numCols++; 
  
