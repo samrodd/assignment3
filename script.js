@@ -34,6 +34,7 @@ function addC() {
      if(numRows === 0){
          var row = tbl.insertRow();
          var cell = row.insertCell();
+        cell.setAttribute('onClick', 'changeCellColor(event)');
          numRows++;
          numCols++;
      }
@@ -41,7 +42,10 @@ function addC() {
      //handle all other cases
      else{
          for(let i = 0; i < rows.length; i++){
-             rows[i].insertCell();
+            var cell = rows[i].insertCell();
+            cell.setAttribute('onClick', 'changeCellColor(event)');
+
+             
          }
          numCols++; 
  
@@ -124,3 +128,9 @@ function clearAll(){
 function fillU(){
     alert("Clicked Fill All Uncolored")
 }
+
+function changeCellColor(event){
+    var target = event.target;
+    target.style.backgroundColor =  colorSelected;
+}
+
