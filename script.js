@@ -127,7 +127,16 @@ function clearAll(){
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //get all td elements and store in variable elems
+    var elems = document.getElementById("grid").getElementsByTagName("td");
+    //iterate through all table cells and change background-color to colorSelected
+
+    for(let i = 0; i < elems.length; i++){
+        let objBgColor = window.getComputedStyle(elems[i]).backgroundColor;
+        if(objBgColor === "rgb(255, 255, 255)"){
+            elems[i].style.backgroundColor = colorSelected;
+        }
+    }    
 }
 
 function changeCellColor(event){
